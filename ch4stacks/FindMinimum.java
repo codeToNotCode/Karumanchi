@@ -6,6 +6,7 @@ package ch4stacks;
 
 import java.util.Stack;
 
+@SuppressWarnings("serial")
 public class FindMinimum extends Stack<Integer>
 {
 	private Stack<Integer> min = new Stack<>();
