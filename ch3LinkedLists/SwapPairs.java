@@ -50,22 +50,15 @@ public class SwapPairs
 	
 	///Swap Pairs
 	public Node swap(Node h1){
-		if(h1 == null)
-			return null;
+		if(h1 == null || h1.next==null)
+			return h1;
 		
-		Node hNew = h1;
+		Node hNew = h1.next;
 		Node p = h1;
-		Node q = null;
-		Node trav = null;
-		
-		
-		if(h1.next != null)
-			hNew = h1.next;
-		
 		
 		while(true){
-			q = p.next;
-			trav = q.next;
+			Node q = p.next;
+			Node trav = q.next;
 			q.next = p;
 			if( trav==null  || trav.next == null){
 				p.next = trav;

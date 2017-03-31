@@ -30,42 +30,43 @@ public class HasACycle
 		head = new_node;
 	}
 
-	public int hasLoop(Node head){
+	public boolean hasLoop(Node head){
 		if(head == null ){
 			System.err.println("Empty List");
-			return 0;
+			return false;
 		}
 		Node trav1 = head;
 		Node trav2 = head;
 		
-		while(trav2.next != null && trav1.next != null ){
+		while(trav2 != null && trav2.next != null ){
 			trav2 = trav2.next.next;
 			trav1 = trav1.next;
 			
 			//If Loop occurs break
 			if( trav2.equals(trav1 ))
-				break;
+				return true;
 		}
 		
 		//If either of the pointers reach the end, no loop
 		if( trav1 == null || trav2 == null ){
 			System.err.println("No Loop");
-			return 0;
+			return false;
 		}
-		//To find the starting node in the loop
-		trav1 = head;
-		while( trav1 != trav2 ){
-			trav1 = trav1.next;
-			trav2 = trav2.next;
-		}
-		
-		//To find the number of elements in the loop, including the start element
-		int count = 0;
-		while(trav1.next != trav2 ){
-			trav1 = trav1.next;
-			count++;
-		}
-		return count;
+//		//To find the starting node in the loop
+//		trav1 = head;
+//		while( trav1 != trav2 ){
+//			trav1 = trav1.next;
+//			trav2 = trav2.next;
+////		}
+//		
+//		//To find the number of elements in the loop, including the start element
+//		int count = 0;
+//		while(trav1.next != trav2 ){
+//			trav1 = trav1.next;
+//			count++;
+//		}
+		//return trav1.data;
+		return false;
 	}
 	
 	// Driver Function
@@ -86,7 +87,7 @@ public class HasACycle
 		/* Create loop for testing */
 		//llist.head.next.next.next.next = llist.head.next;
 		llist.head.next = llist.head;
-		System.out.println(llist.hasLoop(llist.head)+1);
+		System.out.println(llist.hasLoop(llist.head));
 	}
 
 }

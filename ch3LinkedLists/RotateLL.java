@@ -51,43 +51,37 @@ public class RotateLL
     }
     
     //To rotate the linked list
-    public Node rotate(Node head, int k){
-    	if(head == null || k <= 0)
-    		return head;
-    	Node kth = findKthFromEnd(head,k);
-    	Node rotatedHead = kth;
-    	while(kth.next != null ){
-    		kth = kth.next;
-    	}
-    	kth.next = head;
-    	return rotatedHead;
-    }
-    
-    //Find kth from end
-    private Node findKthFromEnd(Node head,int k){
-    	Node trav = head;
-    	int i =0;
-    	for(; i < k  && trav!=null; i++)
-    		trav = trav.next;
-    	//If value of k is greater than the length of linkedlist
-    	if(trav == null){
-    		k = k%i;
-    	   	trav = head;
-    	   	for(int j=0; j < k ; j++)
-    	   		trav = trav.next;
-    	}
-    	
-    	Node kth =head;
-    	Node prev = new Node(0);
-    	prev.next = head;
-    	while(trav!=null){
-    		trav = trav.next;
-    		prev = kth;
-    		kth = kth.next;
-    	}
-    	prev.next = null;
-    	return kth;
-    }
+	public Node rotate(Node a, int b) {
+		   if(a==null || a.next == null || b<=0)
+		        return a;
+		    int i =0;
+	        Node t = a;
+	        while(t!=null){
+	            i++;
+	            t = t.next;
+	        }
+	        b = b % i;
+	        if (b == 0)
+	            return a;
+	        t = a;
+	        i =0;
+	        while(i<b){
+	            i++;
+	            t = t.next;
+	        }
+	        Node prevToB = a;
+	        while(t.next!=null){
+	            t = t.next;
+	            prevToB= prevToB.next;
+	        }
+		   Node rotatedHead = prevToB.next;
+		   prevToB.next = null;
+		   Node bth = rotatedHead;
+		   while(bth.next!=null)
+		    bth = bth.next;
+		   bth.next = a;
+		   return rotatedHead;
+	}
     public static void main(String[] args)
     {
         // Pushing data in the linked list.
@@ -101,7 +95,7 @@ public class RotateLL
  
         System.out.println("\nRotated List :\n");
         // Rotate the original linked list.
-        list.print(list.rotate(list.head,13));
+        list.print(list.rotate(list.head,8));
  
     }
 

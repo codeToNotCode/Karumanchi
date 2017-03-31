@@ -1,5 +1,5 @@
 /*
- * To merge two sorted linked lists into a new lists in sorted order
+  * To merge two sorted linked lists into a new lists in sorted order
  * O(m+n) Time 
  * Using Recursion 
  * Using Iteration
@@ -55,16 +55,8 @@ public class Merge2SortedInto3rd
 		
 		Node trav1 = h1;
 		Node trav2 = h2;
-		Node h3 ;
-		
-		if( trav1.data<=trav2.data){
-			h3 = trav1;
-			trav1 = trav1.next;
-		}
-		else{
-			h3 = trav2;
-			trav2 = trav2.next;
-		}
+		Node h3 = new Node(0);
+
 		Node trav = h3;
 		while(trav1!=null && trav2!=null){
 			if( trav1.data<=trav2.data){
@@ -82,7 +74,7 @@ public class Merge2SortedInto3rd
 		else
 			trav.next = trav1;
 		
-		return h3;
+		return h3.next;
 	}
 	
 	

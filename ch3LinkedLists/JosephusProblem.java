@@ -72,6 +72,6 @@ public class JosephusProblem
 		ll.push(4);ll.push(3);ll.push(2);ll.push(1);
 		ll.display(ll.last);
 		System.out.println();
-		ll.display(ll.Josephus(ll.last,3));
+		ll.display(ll.Josephus(ll.last,2));
 	}
 }

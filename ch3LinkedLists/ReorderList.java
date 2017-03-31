@@ -45,8 +45,7 @@ public class ReorderList
     	//Split list into two halves at the middle
     	Node mid;
     	Node trav1 = head;
-    	Node trav2 = new Node(0);
-    	trav2.next = head;
+    	Node trav2 = head;
     	while(trav1!=null&&trav1.next!=null){
     		trav1 = trav1.next.next;
     		trav2 = trav2.next;
@@ -97,7 +96,7 @@ public class ReorderList
         ReorderList list = new ReorderList();
         list.push(8);list.push(7);
         list.push(6);list.push(5);list.push(4); list.push(3);
-        list.push(2);        list.push(1);
+        list.push(2);        
     
         // Print the original and cloned linked list.
         System.out.println("Original linked list");

@@ -43,10 +43,9 @@ public class NbyKthNode
     //To print the n/kth modular node
     public Node nByk(Node head, int k){
     	if(head == null || k <= 0 )	return null;
-    	Node s = new Node(0);
-    	s.next = head;
+    	Node s = null;
     	int i = 1;
-    	for(; head!=null;head=head.next){
+    	while( head!=null){
     		if(i%k==0){
     			if(s==null)
     				s=head;
@@ -54,6 +53,7 @@ public class NbyKthNode
     				s=s.next;
     		}
     		i++;
+    		head=head.next;
     	}
     	return s;
     }

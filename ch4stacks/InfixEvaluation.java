@@ -26,10 +26,7 @@ public class InfixEvaluation
 				continue;
 			
 			if(tokens[i]>='0' && tokens[i]<='9'){
-				StringBuffer sb =new StringBuffer();
-				while(i<tokens.length && tokens[i]>='0'&&tokens[i]<='9')
-					sb.append(tokens[i++]);
-				values.push(Integer.parseInt(sb.toString()));
+				values.push(tokens[i]-'0');
 			}
 			else if(tokens[i] == '(')
 				operators.push(tokens[i]);
@@ -75,6 +72,6 @@ public class InfixEvaluation
 	public static void main(String[] args)
 	{
 		InfixEvaluation ie = new InfixEvaluation();
-		System.out.println(ie.inEval("100 * ( 2 + 12 ) / 14"));
+		System.out.println(ie.inEval("(1)"));
 	}
 }

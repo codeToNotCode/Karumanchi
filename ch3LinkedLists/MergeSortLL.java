@@ -48,22 +48,12 @@ public class MergeSortLL
 	
 	
 	//To merge the sorted halves
-	public Node mergeLists(Node n1, Node n2){
-		if(n1 == null)	return n2;
-		if(n2 == null)	return n1;
-		Node mergeHead;
-		Node trav1 = n1;
-		Node trav2 = n2;
-		if( trav1.data <=trav2.data ){
-			mergeHead = trav1;
-			trav1 = trav1.next;
-		}
-		else{
-			mergeHead = n2;
-			trav2 = trav2.next;
-		}
-		
+	public Node mergeLists(Node trav1, Node trav2){
+		if(trav1 == null)	return trav2;
+		if(trav2 == null)	return trav1;
+		Node mergeHead = new Node(0);
 		Node trav3 = mergeHead;
+		
 		while(trav1 != null && trav2 != null ){
 			 if(trav1.data <= trav2.data){
 				 trav3.next = trav1;
@@ -75,25 +65,20 @@ public class MergeSortLL
 			 }
 			 trav3 = trav3.next;
 		}
-		while(trav1!=null){
-			 trav3.next = trav1;
-			 trav3 = trav3.next;
-			 trav1 = trav1.next;
+		if(trav1 == null){
+			trav3.next = trav2;
 		}
-		while(trav2!=null){
-			 trav3.next = trav2;
-			 trav3 = trav3.next;
-			 trav2 = trav2.next;
-		}
+		else if( trav2 == null)
+			trav3.next = trav1;
 		
-		return mergeHead;
+		return mergeHead.next;
 	}
 	
 	
 	//To recursively split the linked list into 2 halves
 	//Divide and conquer approach
 	public Node splitAtMiddle(Node head){
-		if( head.next == null )
+		if(head == null|| head.next == null )
 			return head;
 		
 		Node trav = head;

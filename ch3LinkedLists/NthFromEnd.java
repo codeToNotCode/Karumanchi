@@ -195,9 +195,9 @@ public class NthFromEnd {
 		ll.push(224);ll.push(46);ll.push(4252);ll.push(234);ll.push(46346);ll.push(452);ll.push(24);ll.push(42);ll.push(41);
 		ll.display();
 		System.out.println();
-		System.out.println(ll.nthFromEnd(8));
-		System.out.println(ll.nthOptimal(8));
-		System.out.println(ll.nthHash(8));
-		System.out.println(ll.nthRecur(8));
+		System.out.println(ll.nthFromEnd(1));
+		System.out.println(ll.nthOptimal(1));
+		System.out.println(ll.nthHash(1));
+		System.out.println(ll.nthRecur(1));
 	}
 }

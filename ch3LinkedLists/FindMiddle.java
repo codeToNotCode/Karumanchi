@@ -57,7 +57,7 @@ public class FindMiddle
 		
 		//1st check is for odd numbers
 		//2nd Check is for even numbers
-		while( trav1.next!=null && trav1.next.next != null ){
+		while( trav1!=null && trav1.next!= null ){
 			trav1 = trav1.next.next;
 			trav2 = trav2.next;
 		}
@@ -68,7 +68,7 @@ public class FindMiddle
 	{
 		FindMiddle list = new FindMiddle();
 		
-		list.push(100);list.push(90);list.push(80);list.push(70);list.push(60);list.push(60);
+		list.push(100);list.push(90);list.push(80);list.push(70);//list.push(60);
 	//	list.push(100);list.push(90);list.push(80);list.push(70);list.push(70);list.push(70);list.push(70);
 		list.display(list.head);
 		System.out.println();

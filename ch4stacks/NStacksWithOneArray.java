@@ -71,6 +71,7 @@ public class NStacksWithOneArray
 			return;
 		if(isEmpty(stackId))
 			return;
+		
 		int cIndex = topOfStack[stackId];
 		while(nextIndex[cIndex] != -1){
 			System.out.println(stackData[cIndex]);
