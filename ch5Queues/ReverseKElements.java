@@ -30,8 +30,8 @@ public class ReverseKElements
 		Queue<Integer> q = new LinkedList<>();
 		q.add(10);q.add(20);q.add(30);q.add(40);q.add(50);q.add(60);q.add(70);q.add(80);q.add(90);
 		
-		Queue<Integer> rev = rke.reverseK(q,2);
+		Queue<Integer> rev = rke.reverseK(q,4);
 		while(!rev.isEmpty())
-			System.out.println(rev.remove());
+			System.out.print(rev.remove()+" ");
 	}
 }

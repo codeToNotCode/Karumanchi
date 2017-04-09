@@ -19,11 +19,10 @@ public class StackUsingQueue
 		if(q.isEmpty())
 			q.add(d);
 		else{
-			int len = q.size();
-			for(int i = 0; i < len ; i++)
+			while(!q.isEmpty())
 				temp.add(q.remove());
 			q.add(d);
-			for(int i = 0; i < len; i++)
+			while(!temp.isEmpty())
 				q.add(temp.remove());
 		}
 	}
